@@ -7,9 +7,9 @@ st.set_page_config(page_title="Employee Attrition Prediction App", page_icon='ðŸ
 @st.cache_resource
 def load_assets():
     assets = {}
-    assets['model'] = joblib.load('attrition_model.pkl')
-    assets['scaler'] = joblib.load('numerical_scaler.pkl')
-    assets['features'] = joblib.load('model_features.pkl')
+    assets['model'] = joblib.load('app/attrition_model.pkl')
+    assets['scaler'] = joblib.load('app/numerical_scaler.pkl')
+    assets['features'] = joblib.load('app/model_features.pkl')
     return assets
 
 try:
