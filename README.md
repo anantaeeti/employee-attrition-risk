@@ -176,7 +176,7 @@ This allows HR teams to quickly interpret model outputs and prioritize retention
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/employee-attrition-dashboard.git
+git clone https://github.com/anantaeeti/employee-attrition-risk
 cd employee-attrition-dashboard
 ```
 
