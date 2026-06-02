@@ -1,0 +1,16 @@
+# Python bytecode and cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local environment and IDE settings
+.virtualenv/
+venv/
+ENV/
+.vscode/
+.idea/
+
+# Streamlit local configuration files
+.streamlit/
+.ipynb_checkpoints/
