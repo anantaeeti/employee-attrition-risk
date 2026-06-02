@@ -3,8 +3,8 @@
 An interactive, production-ready web application built with **Streamlit** that leverages machine learning to predict employee attrition risk. The application enables HR professionals and business stakeholders to assess the likelihood of employee turnover using key workforce, performance, and satisfaction indicators.
 <table>
   <tr>
-    <th>Photo 1</th>
-    <th>Photo 2</th>
+    <th>Homescreen</th>
+    <th>Prediction</th>
   </tr>
   <tr>
     <td><img src="photos/photo1.png" alt="Home" width="400"></td>
