@@ -13,7 +13,7 @@ Live App: https://employee-attrition-risk-hl2jwjr2skzmgrbuvt5e9k.streamlit.app/
     <td><img src="photos/photo3.png" alt="Output" width="400"></td>
   </tr>
 </table>
-The system transforms user-provided HR data into a production-ready feature schema, applies the same preprocessing pipeline used during model training, and generates a real-time attrition risk prediction powered by a trained **Logistic Regression model**.
+The system transforms user-provided HR data into a production-ready feature schema, applies the same preprocessing pipeline used during model training, and generates a real-time attrition risk prediction powered by a trained <strong>Logistic Regression</strong> model.
 
 Unlike traditional accuracy-focused solutions, this project prioritizes **Recall**, ensuring that potential flight-risk employees are identified as early as possible. This approach supports proactive retention strategies and minimizes the business impact associated with unexpected employee departures.
 
