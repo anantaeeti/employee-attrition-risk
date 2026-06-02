@@ -161,13 +161,22 @@ This allows HR teams to quickly interpret model outputs and prioritize retention
 ## 📂 Project Structure
 
 ```text
-├── a.py                      # Main Streamlit application script
-├── attrition_model.pkl       # Trained Logistic Regression model
-├── numerical_scaler.pkl      # Saved StandardScaler object
-├── model_features.pkl        # Training feature schema
-├── .gitignore                # Ignore cache and local files
-└── README.md                 # Project documentation
-```
+├── app/
+│   ├── app.py                      # Main Streamlit dashboard interface script
+│   ├── attrition_model.pkl         # Trained and serialized Logistic Regression model artifact
+│   ├── model_features.pkl          # Serialized list of feature names ensuring strict training/inference alignment
+│   └── numerical_scaler.pkl        # Serialized StandardScaler artifact for continuous variables
+├── data/
+│   └── data.csv                    # Raw employee attrition dataset
+├── notebooks/
+│   └── attrition_eda_ml.ipynb      # Jupyter Notebook detailing EDA, data balancing, and baseline benchmarking
+├── photos/
+│   ├── photo1.png                  # UI screenshot / visualization asset for documentation
+│   ├── photo2.png                  # UI screenshot / visualization asset for documentation
+│   └── photo3.png                  # UI screenshot / visualization asset for documentation
+├── .gitignore                      # Specifies intentionally untracked local environments and checkpoints
+├── README.md                       # Comprehensive project documentation and model evaluation metrics
+└── requirements.txt                # Fixed pinning of project dependencies (scikit-learn, streamlit, etc.)
 
 ---
 
@@ -177,7 +186,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/anantaeeti/employee-attrition-risk
-cd employee-attrition-dashboard
+cd employee-attrition-risk
 ```
 
 Install dependencies:
@@ -189,7 +198,7 @@ pip install -r requirements.txt
 Run the Streamlit application:
 
 ```bash
-streamlit run a.py
+streamlit run app/app.py
 ```
 
 ---
