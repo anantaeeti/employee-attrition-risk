@@ -1,6 +1,8 @@
 # 📊 Employee Attrition Risk Assessment Dashboard
 
 An interactive, production-ready web application built with **Streamlit** that leverages machine learning to predict employee attrition risk. The application enables HR professionals and business stakeholders to assess the likelihood of employee turnover using key workforce, performance, and satisfaction indicators.
+
+## Live App: https://employee-attrition-risk-hl2jwjr2skzmgrbuvt5e9k.streamlit.app/
 <table>
   <tr>
     <th>Homescreen</th>
