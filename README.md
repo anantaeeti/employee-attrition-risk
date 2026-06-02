@@ -7,8 +7,8 @@ An interactive, production-ready web application built with **Streamlit** that l
     <th>Photo 2</th>
   </tr>
   <tr>
-    <td><img src="photos/photo1.png" alt="Photo 1" width="400"></td>
-    <td><img src="photos/photo2.png" alt="Photo 2" width="400"></td>
+    <td><img src="photos/photo1.png" alt="Home" width="400"></td>
+    <td><img src="photos/photo3.png" alt="Output" width="400"></td>
   </tr>
 </table>
 The system transforms user-provided HR data into a production-ready feature schema, applies the same preprocessing pipeline used during model training, and generates a real-time attrition risk prediction powered by a trained **Logistic Regression model**.
