@@ -161,47 +161,67 @@ This allows HR teams to quickly interpret model outputs and prioritize retention
 ## 📂 Project Structure
 
 ```text
+employee-attrition-risk/
+│
 ├── app/
-│   ├── app.py                      # Main Streamlit dashboard interface script
-│   ├── attrition_model.pkl         # Trained and serialized Logistic Regression model artifact
-│   ├── model_features.pkl          # Serialized list of feature names ensuring strict training/inference alignment
-│   └── numerical_scaler.pkl        # Serialized StandardScaler artifact for continuous variables
+│   ├── app.py
+│   ├── attrition_model.pkl
+│   ├── model_features.pkl
+│   └── numerical_scaler.pkl
+│
 ├── data/
-│   └── data.csv                    # Raw employee attrition dataset
+│   └── data.csv
+│
 ├── notebooks/
-│   └── attrition_eda_ml.ipynb      # Jupyter Notebook detailing EDA, data balancing, and baseline benchmarking
+│   └── attrition_eda_ml.ipynb
+│
 ├── photos/
-│   ├── photo1.png                  # UI screenshot / visualization asset for documentation
-│   ├── photo2.png                  # UI screenshot / visualization asset for documentation
-│   └── photo3.png                  # UI screenshot / visualization asset for documentation
-├── .gitignore                      # Specifies intentionally untracked local environments and checkpoints
-├── README.md                       # Comprehensive project documentation and model evaluation metrics
-└── requirements.txt                # Fixed pinning of project dependencies (scikit-learn, streamlit, etc.)
+│   ├── photo1.png
+│   ├── photo2.png
+│   └── photo3.png
+│
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
+
+### Folder Details
+
+| Path                               | Description                                               |
+| ---------------------------------- | --------------------------------------------------------- |
+| `app/app.py`                       | Main Streamlit dashboard application                      |
+| `app/attrition_model.pkl`          | Trained Logistic Regression model                         |
+| `app/model_features.pkl`           | Saved training feature schema                             |
+| `app/numerical_scaler.pkl`         | StandardScaler used during model training                 |
+| `data/data.csv`                    | Employee attrition dataset                                |
+| `notebooks/attrition_eda_ml.ipynb` | EDA, preprocessing, model comparison, and experimentation |
+| `photos/`                          | Screenshots used in project documentation                 |
+| `requirements.txt`                 | Project dependencies                                      |
+| `README.md`                        | Project documentation                                     |
 
 ---
 
 ## ⚡ Installation
 
-Clone the repository:
+### Clone the Repository
 
 ```bash
-git clone https://github.com/anantaeeti/employee-attrition-risk
+git clone https://github.com/anantaeeti/employee-attrition-risk.git
 cd employee-attrition-risk
 ```
 
-Install dependencies:
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the Streamlit application:
+### Run the Application
 
 ```bash
 streamlit run app/app.py
 ```
 
----
 
 ## 🔍 Workflow Overview
 
