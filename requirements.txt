@@ -1,4 +1,10 @@
 streamlit
 pandas
 scikit-learn
+xgboost
+shap
+scipy
+matplotlib
+seaborn
+numpy
 joblib
