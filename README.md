@@ -33,6 +33,7 @@ The goal of this project is to:
 The application bridges the gap between model development and practical business usage by transforming a trained machine learning model into an accessible decision-support tool.
 
 To bridge the gap between predictive modeling and deep data science insights, the project incorporates an exhaustive **Exploratory Data Analysis (EDA) and Statistical Validation framework**. This includes rigorous missing value and outlier diagnostics, Chi-Square tests of independence and independent T-tests to validate feature significance, and multidimensional categorical breakdowns examining attrition rates across job roles, satisfaction tiers, and tenure groups. Furthermore, the pipeline integrates **SHAP (SHapley Additive exPlanations)** to interpret complex model decisions, transforming black-box machine learning predictions into transparent, actionable business drivers for strategic HR retention planning.
+
 ---
 
 ## 🚀 Features
