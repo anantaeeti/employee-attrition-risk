@@ -33,7 +33,6 @@ This production tool uses an optimized Logistic Regression engine to assess empl
 """)
 st.write("---")
 
-# Exact tab naming matching your UI screenshot
 tab1, tab2, tab3 = st.tabs([
     "📊 Personal & History", 
     "💼 Job Role Details", 
@@ -73,6 +72,7 @@ with tab2:
             "Sales Representative", "Research Director", "Human Resources"
         ])
         monthly_income = st.number_input("Monthly Income ($)", min_value=1000, max_value=25000, value=5000, step=500)
+        stock_option_level = st.selectbox("Stock Option Level (0 to 3)", options=[0, 1, 2, 3], index=1)
         
     with col4:
         overtime = st.selectbox("Does the employee work Overtime?", options=["No", "Yes"])
@@ -124,7 +124,7 @@ if st.button("📊 Run Risk Assessment", type="primary", use_container_width=Tru
         'PercentSalaryHike': 15,
         'PerformanceRating': 3,
         'RelationshipSatisfaction': relationship_satisfaction,
-        'StockOptionLevel': 1,
+        'StockOptionLevel': stock_option_level,
         'TotalWorkingYears': total_working_years,
         'TrainingTimesLastYear': 2,
         'WorkLifeBalance': work_life_balance,
@@ -181,7 +181,7 @@ if st.button("📊 Run Risk Assessment", type="primary", use_container_width=Tru
     risk_percent = risk_score * 100
     
     # ==========================================
-    # 4. MATCHING PHOTO 2 OUTPUT FORMATTING
+    # 4. DISPLAY PREDICTION & SUMMARY
     # ==========================================
     st.write("## Prediction Result")
     
@@ -214,4 +214,47 @@ if st.button("📊 Run Risk Assessment", type="primary", use_container_width=Tru
             * **Job Role:** {job_role}
             * **Monthly Income:** ${monthly_income:,}
             * **Overtime Required:** {overtime}
+            * **Stock Option Level:** Level {stock_option_level}
             """)
+
+    st.write("---")
+    st.write("### 📊 Key Risk Drivers Analysis")
+    
+    # Dynamic Visualization Data Extraction (Sticks/Bar Chart)
+    coefficients = model.coef_[0]
+    feature_names = list(model.feature_names_in_)
+    weight_map = dict(zip(feature_names, coefficients))
+
+    ot_yes_key = next((k for k in weight_map.keys() if 'overtime' in k.lower() and 'yes' in k.lower()), None)
+    overtime_impact = weight_map[ot_yes_key] if (overtime == "Yes" and ot_yes_key) else 0.0
+
+    dist_key = next((k for k in weight_map.keys() if 'distance' in k.lower()), None)
+    tenure_key = next((k for k in weight_map.keys() if 'yearsatcompany' in k.lower()), None)
+    role_key = next((k for k in weight_map.keys() if 'currentrole' in k.lower()), None)
+    manager_key = next((k for k in weight_map.keys() if 'manager' in k.lower()), None)
+
+    distance_impact = weight_map[dist_key] * distance_from_home if dist_key else 0.0
+    tenure_impact = weight_map[tenure_key] * years_at_company if tenure_key else 0.0
+    role_time_impact = weight_map[role_key] * years_in_current_role if role_key else 0.0
+    manager_impact = weight_map[manager_key] * years_with_curr_manager if manager_key else 0.0
+
+    impact_data = {
+        "Factor": [
+            "Overtime Engagement", 
+            "Commute Stress (Distance)", 
+            "Tenure at Company", 
+            "Time in Current Role", 
+            "Relationship with Manager"
+        ],
+        "Impact Score": [
+            overtime_impact,
+            distance_impact,
+            tenure_impact,
+            role_time_impact,
+            manager_impact
+        ]
+    }
+    
+    chart_df = pd.DataFrame(impact_data).set_index("Factor")
+    st.bar_chart(chart_df, y="Impact Score", use_container_width=True)
+    st.caption("💡 **How to read this chart:** Positive values increase flight risk. Negative values act as protective retention anchors.")
