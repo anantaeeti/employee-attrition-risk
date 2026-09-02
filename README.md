@@ -252,3 +252,6 @@ This project demonstrates how machine learning can support human resource decisi
 ## 📜 Disclaimer
 
 This application is intended for educational and analytical purposes. Predictions should be used as a decision-support tool rather than a replacement for human judgment. Employee attrition is influenced by numerous organizational and personal factors that may not be fully captured by a machine learning model.
+
+------
+
